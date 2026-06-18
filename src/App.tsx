@@ -339,7 +339,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto px-6 text-center">
 
           <h1 className="text-6xl font-semibold tracking-tighter mb-4">Find the best<br />Indian stocks.</h1>
-          <p className="text-xl text-gray-400 max-w-md mx-auto mb-10">Powerful stock screener with real-time financial data.</p>
+          <p className="text-xl text-gray-400 max-w-md mx-auto mb-10">Indian stock screener with sample data. Real-time prices coming soon.</p>
           
           <div className="flex justify-center gap-4">
             <button onClick={() => navigate('/screener')} className="bg-[#00C853] hover:bg-[#00B34A] text-black px-9 py-3.5 font-semibold rounded-xl flex items-center gap-2 transition">
