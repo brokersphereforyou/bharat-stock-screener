@@ -660,7 +660,7 @@ const LiveIndices: React.FC = () => {
         </div>
         <div className="text-[10px] text-gray-400 flex items-center gap-2">
           {marketClosed && <span className="bg-white/10 px-2 py-px rounded">MARKET CLOSED</span>}
-          Closing prices • 3:30 PM IST
+          Sample index values • Not live market data
         </div>
       </div>
     </div>
