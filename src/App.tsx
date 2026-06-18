@@ -1,4 +1,5 @@
 import React from 'react';
+import { stocksData } from './stocksData';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { 
@@ -35,18 +36,7 @@ interface FilterState {
 }
 
 // Sample Indian Stocks Data (like screener.in) - Realistic prices
-const initialStocks: Stock[] = [
-  { id: 1, name: "Reliance Industries", symbol: "RELIANCE", price: 1285.40, change: 1.2, marketCap: 174200, pe: 27.4, pb: 2.3, roe: 9.2, roce: 11.8, debtToEquity: 0.35, salesGrowth: 11.8, profitGrowth: 14.2, sector: "Energy" },
-  { id: 2, name: "TCS", symbol: "TCS", price: 3924.75, change: -0.4, marketCap: 142300, pe: 29.8, pb: 11.6, roe: 41.5, roce: 49.6, debtToEquity: 0.08, salesGrowth: 7.4, profitGrowth: 8.9, sector: "IT" },
-  { id: 3, name: "HDFC Bank", symbol: "HDFCBANK", price: 1652.30, change: 0.9, marketCap: 125800, pe: 17.6, pb: 2.7, roe: 16.4, roce: 6.8, debtToEquity: 0.0, salesGrowth: 14.8, profitGrowth: 17.5, sector: "Banking" },
-  { id: 4, name: "Bharti Airtel", symbol: "Airtel", price: 1584.65, change: 1.8, marketCap: 94100, pe: 48.2, pb: 7.9, roe: 14.8, roce: 13.1, debtToEquity: 0.85, salesGrowth: 21.4, profitGrowth: 46.2, sector: "Telecom" },
-  { id: 5, name: "ICICI Bank", symbol: "ICICIBANK", price: 1184.90, change: 1.3, marketCap: 83400, pe: 18.1, pb: 3.0, roe: 18.9, roce: 7.4, debtToEquity: 0.0, salesGrowth: 18.6, profitGrowth: 29.8, sector: "Banking" },
-  { id: 6, name: "Infosys", symbol: "INFY", price: 1528.45, change: 0.6, marketCap: 63500, pe: 23.7, pb: 6.9, roe: 27.4, roce: 34.8, debtToEquity: 0.0, salesGrowth: 3.9, profitGrowth: 6.4, sector: "IT" },
-  { id: 7, name: "Hindustan Unilever", symbol: "HINDUNILVR", price: 2284.10, change: -0.5, marketCap: 53600, pe: 54.6, pb: 11.4, roe: 20.5, roce: 27.3, debtToEquity: 0.0, salesGrowth: 2.8, profitGrowth: 3.5, sector: "FMCG" },
-  { id: 8, name: "ITC", symbol: "ITC", price: 452.75, change: 0.4, marketCap: 56600, pe: 25.8, pb: 7.3, roe: 29.6, roce: 37.8, debtToEquity: 0.0, salesGrowth: 4.9, profitGrowth: 7.8, sector: "FMCG" },
-  { id: 9, name: "State Bank of India", symbol: "SBIN", price: 792.35, change: 2.4, marketCap: 70700, pe: 10.6, pb: 1.9, roe: 18.2, roce: 6.1, debtToEquity: 0.0, salesGrowth: 23.2, profitGrowth: 48.7, sector: "Banking" },
-  { id: 10, name: "Larsen & Toubro", symbol: "LT", price: 3524.80, change: -0.9, marketCap: 48400, pe: 32.8, pb: 5.4, roe: 16.8, roce: 14.3, debtToEquity: 0.25, salesGrowth: 17.6, profitGrowth: 19.8, sector: "Capital Goods" },
-];
+const initialStocks: Stock[] = stocksData;
 
 // Auth Modal with OTP
 const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void; onLogin: (email: string) => void }> = ({ isOpen, onClose, onLogin }) => {
